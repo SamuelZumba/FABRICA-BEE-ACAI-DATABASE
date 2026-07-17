@@ -122,7 +122,7 @@ Fluxos de exceção, como **refugo, descarte e perda de insumo**, também são r
 - comprovante comercial sem valor fiscal;
 - estrutura para integração fiscal opcional.
 
-### Perdas e qualidade
+### Perdas 
 
 - refugo de produção;
 - descarte de produto acabado;
@@ -154,7 +154,7 @@ Fluxos de exceção, como **refugo, descarte e perda de insumo**, também são r
 - status de processamento, autorização, rejeição e cancelamento;
 - armazenamento de chave de acesso, protocolo e respostas técnicas.
 
-### Gestão e apoio à decisão
+### Relatorios
 
 - painel geral com gráficos e indicadores;
 - filtros por período;
@@ -214,7 +214,7 @@ O banco utiliza MySQL/MariaDB, mecanismo InnoDB e charset `utf8mb4`.
 
 A estrutura atual possui 18 tabelas:
 
-### Cadastros e acesso
+### Cadastros 
 
 1. `usuario`
 2. `parceiro_cliente`
@@ -345,71 +345,6 @@ O projeto permite responder perguntas como:
 
 ---
 
-## Estrutura do repositório
-
-```text
-fabrica-bee-acai-data/
-│
-├── README.md
-│
-├── database/
-│   ├── schema.sql
-│   ├── seed.sql
-│   ├── views.sql
-│   ├── indexes.sql
-│   ├── consultas_analiticas.sql
-│   ├── dicionario_de_dados.md
-│   └── README.md
-│
-├── docs/
-│   ├── arquitetura.md
-│   ├── regras-de-negocio.md
-│   ├── normalizacao.md
-│   ├── der-atualizado.png
-│   └── modelo-logico-atualizado.png
-│
-├── screenshots/
-└── dashboard/
-```
-
----
-
-## Conteúdo dos arquivos SQL
-
-### `schema.sql`
-
-Estrutura consolidada para criação do banco do zero, sem depender do histórico de `ALTER TABLE`.
-
-### `seed.sql`
-
-Dados fictícios e opcionais para demonstração.
-
-### `views.sql`
-
-Camada semântica para estoque, PCP, vendas, financeiro, perdas e rastreabilidade.
-
-### `indexes.sql`
-
-Documentação dos índices utilizados para melhorar buscas e relatórios.
-
-### `consultas_analiticas.sql`
-
-Consultas voltadas a indicadores, exploração dos dados e apoio gerencial.
-
----
-
-## Como reproduzir a camada de dados
-
-1. Instale MySQL ou MariaDB.
-2. Execute `database/schema.sql`.
-3. Execute `database/seed.sql`, caso deseje dados fictícios.
-4. Execute `database/views.sql`.
-5. Explore as consultas de `database/consultas_analiticas.sql`.
-
-> Não execute `indexes.sql` sem verificar se os índices já estão presentes em `schema.sql`.
-
----
-
 ## Origem e evolução
 
 O projeto teve origem acadêmica nas disciplinas de Banco de Dados e Engenharia de Software, utilizando um problema real da empresa como base. A primeira entrega documentou o problema de PCP, o escopo, a modelagem, a normalização e as funcionalidades essenciais. Nesta versão pública, o problema e o escopo permanecem resumidos diretamente no README para evitar duplicação desnecessária.
@@ -428,36 +363,10 @@ Após essa etapa, o sistema evoluiu com:
 - responsividade;
 - consolidação final do schema.
 
----
-
-## Autoria
-
-Projeto desenvolvido inicialmente por:
-
-- Samuel Zumba;
-- Heloisa Guedes;
-- Lucas Magalhães;
-- Arthur Arruda;
-- Gustavo Avanso.
-
 Este repositório de portfólio apresenta a evolução técnica da camada de dados e da documentação do projeto.
 
 ---
 
-## Confidencialidade
-
-Não estão publicados:
-
-- código-fonte completo da aplicação;
-- credenciais;
-- Client Secret;
-- documentos fiscais;
-- anexos;
-- dados pessoais reais;
-- registros financeiros reais;
-- informações comerciais sensíveis.
-
-O objetivo é demonstrar competências em **PCP, modelagem de dados, SQL, banco de dados, análise e BI**, sem expor a solução operacional integral.
 
 ## Separação de responsabilidades
 
@@ -476,7 +385,5 @@ O objetivo é demonstrar competências em **PCP, modelagem de dados, SQL, banco 
 - Criação de Views para consultas analíticas
 - Índices para otimização de consultas
 - Rastreabilidade de produção
-- Planejamento e Controle da Produção (PCP)
-- Controle de estoque
 - Modelagem de indicadores gerenciais
 - Documentação técnica
